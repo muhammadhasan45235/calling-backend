@@ -55,9 +55,9 @@ async function startServer() {
   socketService.init(server);
 
   // Bind to 0.0.0.0 and Port 3000 as required by the platform configuration
-  server.listen(PORT, "0.0.0.0", () => {
+  server.listen(PORT, () => {
     console.log(`====================================================`);
-    console.log(` Server successfully started on http://0.0.0.0:${PORT}`);
+    console.log(` Server successfully started on :${PORT}`);
     console.log(`====================================================`);
   });
 }

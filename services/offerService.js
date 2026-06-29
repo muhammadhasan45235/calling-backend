@@ -26,7 +26,7 @@ let isDbConnected = false;
 
 const mongooseConnection = async () => {
   await mongoose
-    .connect(process.env.MONGO_URI)
+    .connect('mongodb+srv://muhammadhsn72:ADMphpWYPkS6RaW1@cluster0.c7vi7bi.mongodb.net/VideoCall')
     .then(() => {
       console.log("Successfully connected to MongoDB");
       isDbConnected = true;
