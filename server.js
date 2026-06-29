@@ -29,7 +29,6 @@ import { socketService } from "./services/socketService.js";
 import express from "express";
 import http from "http";
 
-
 async function startServer() {
   const app = express();
   const server = http.createServer(app);
@@ -37,7 +36,7 @@ async function startServer() {
 
   app.use(express.json());
 
-  // API Routes 
+  // API Routes
   app.get("/api/health", (req, res) => {
     res.json({ status: "healthy", timestamp: new Date().toISOString() });
   });
@@ -52,7 +51,12 @@ async function startServer() {
   });
 
   // Initialize WebRTC Signaling Socket service
-  socketService.init(server);
+  socketService.init(server, {
+    cors: {
+      origin: "*",
+      methods: ["GET", "POST"],
+    },
+  });
 
   // Bind to 0.0.0.0 and Port 3000 as required by the platform configuration
   server.listen(PORT, () => {
