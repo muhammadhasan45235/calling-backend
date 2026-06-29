@@ -51,12 +51,7 @@ async function startServer() {
   });
 
   // Initialize WebRTC Signaling Socket service
-  socketService.init(server, {
-    cors: {
-      origin: "*",
-      methods: ["GET", "POST"],
-    },
-  });
+  socketService.init(server);
 
   // Bind to 0.0.0.0 and Port 3000 as required by the platform configuration
   server.listen(PORT, () => {

@@ -21,7 +21,7 @@ export function configureSocket(server) {
     cors: {
       origin: "*", // Allows any frontend client to connect
       methods: ["GET", "POST"],
-      credentials: true,
+      // credentials: true,
     },
     transports: ["websocket", "polling"],
   });
