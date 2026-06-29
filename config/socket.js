@@ -19,7 +19,7 @@ import { Server } from "socket.io";
 export function configureSocket(server) {
   return new Server(server, {
     cors: {
-      origin: "*", // Allows any frontend client to connect
+      origin: ["http://localhost:5173","*"], // Allows any frontend client to connect
       methods: ["GET", "POST"],
       // credentials: true,
     },
